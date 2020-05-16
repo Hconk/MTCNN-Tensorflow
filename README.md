@@ -15,6 +15,17 @@ Landmark Face Dataset : http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm
 3. 生成12_net img list: python ./prepare_data/gen_imglist_pnet.py
 4. 生成tf record文件： python ./prepare_data/gen_PNet_tfrecords.py
 5. 开始训练PNet : python ./train_models/train_PNet.py
+2. 为RNet生成hard example: python ./prepare_data/gen_hard_example.py
+3. 生成24net landmark数据： python ./prepare_data/gen_landmark_aug_24.py
+4. 生成24net img list: python ./prepare_data/gen_imglist_rnet.py
+5. 生成24net tf record: python  ./prepare_data/gen_RNet_tfrecords.py
+6. 为ONet生成hard example: python ./prepare_data/gen_hard_example_onet.py
+7. 生成48net landmark数据：python ./prepare_data/gen_landmark_aug_48.py
+8. 生成48net hard example:python ./prepare_data/gen_imglist_onet.py
+9. 生成48net tfrecord: python ./prepare_data/gen_ONet_tfrecords.py
+10. 开始训练ONet: python ./train_models/train_ONet.py
+
+
 
 ## Description
 This work is used for reproduce MTCNN,a Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks.
