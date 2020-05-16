@@ -176,9 +176,9 @@ def GenerateData(ftxt,data_path,net,argument=False):
     return F_imgs,F_landmarks
 
 if __name__ == '__main__':
-    dstdir = "../../DATA/12/train_PNet_landmark_aug"
-    OUTPUT = '../../DATA/12'
-    data_path = '../../DATA'
+    dstdir = "./DATA/12/train_PNet_landmark_aug"
+    OUTPUT = './DATA/12'
+    data_path = './DATA'
     if not exists(OUTPUT):
         os.mkdir(OUTPUT)
     if not exists(dstdir):
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     # train data
     net = "PNet"
     #the file contains the names of all the landmark training data
-    train_txt = "trainImageList.txt"
+    train_txt = "./prepare_data/trainImageList.txt"
     imgs,landmarks = GenerateData(train_txt,data_path,net,argument=True )
     
    

@@ -1,3 +1,21 @@
+MTCNN-Tensorflow训练
+
+1. 下载训练数据
+
+WIDERFACE: http://shuoyang1213.me/WIDERFACE/
+
+Landmark Face Dataset : http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm
+
+2. 准备数据
+
+将下载好的数据解压到 MTCNN-Tensorflow/DATA 目录
+
+1. 生成12_net 数据： python ./prepare_data/gen_12net_data.py
+2. 生成12_net landmark数据：python ./prepare_data/gen_landmark_aug_12.py
+3. 生成12_net img list: python ./prepare_data/gen_imglist_pnet.py
+4. 生成tf record文件： python ./prepare_data/gen_PNet_tfrecords.py
+5. 开始训练PNet : python ./train_models/train_PNet.py
+
 ## Description
 This work is used for reproduce MTCNN,a Joint Face Detection and Alignment using Multi-task Cascaded Convolutional Networks.
 

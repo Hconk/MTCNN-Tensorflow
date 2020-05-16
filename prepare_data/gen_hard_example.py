@@ -32,13 +32,13 @@ def save_hard_example(net, data,save_path):
 
     
     # save files
-    neg_label_file = "../../DATA/no_LM%d/neg_%d.txt" % (net, image_size)
+    neg_label_file = "./DATA/no_LM%d/neg_%d.txt" % (net, image_size)
     neg_file = open(neg_label_file, 'w')
 
-    pos_label_file = "../../DATA/no_LM%d/pos_%d.txt" % (net, image_size)
+    pos_label_file = "./DATA/no_LM%d/pos_%d.txt" % (net, image_size)
     pos_file = open(pos_label_file, 'w')
 
-    part_label_file = "../../DATA/no_LM%d/part_%d.txt" % (net, image_size)
+    part_label_file = "./DATA/no_LM%d/part_%d.txt" % (net, image_size)
     part_file = open(part_label_file, 'w')
     #read detect result
     det_boxes = pickle.load(open(os.path.join(save_path, 'detections.pkl'), 'rb'))
@@ -195,7 +195,7 @@ def parse_args():
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='RNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
-                        default=['../data/MTCNN_model/PNet_No_Landmark/PNet', '../data/MTCNN_model/RNet_No_Landmark/RNet', '../data/MTCNN_model/ONet_No_Landmark/ONet'],
+                        default=['./data/MTCNN_model/PNet_No_Landmark/PNet', './data/MTCNN_model/RNet_No_Landmark/RNet', './data/MTCNN_model/ONet_No_Landmark/ONet'],
                         type=str)
     parser.add_argument('--epoch', dest='epoch', help='epoch number of model to load', nargs="+",
                         default=[18, 14, 16], type=int)
@@ -224,8 +224,8 @@ if __name__ == '__main__':
     if net == "ONet":
         image_size = 48
 
-    base_dir = '../../DATA/WIDER_train'
-    data_dir = '../../DATA/no_LM%s' % str(image_size)
+    base_dir = './DATA/WIDER_train'
+    data_dir = './DATA/no_LM%s' % str(image_size)
     
     neg_dir = get_path(data_dir, 'negative')
     pos_dir = get_path(data_dir, 'positive')

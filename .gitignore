@@ -1,0 +1,4 @@
+DATA/*
+*.pyc
+logs/*
+nohup.out

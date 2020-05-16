@@ -9,7 +9,7 @@ from tensorboard.plugins import projector
 
 from train_models.MTCNN_config import config
 
-sys.path.append("../prepare_data")
+sys.path.append("./prepare_data")
 print(sys.path)
 from prepare_data.read_tfrecord_v2 import read_multi_tfrecords,read_single_tfrecord
 
@@ -180,7 +180,7 @@ def train(net_factory, prefix, end_epoch, base_dir,
     tf.summary.scalar("cls_accuracy",accuracy_op)#cls_acc
     tf.summary.scalar("total_loss",total_loss_op)#cls_loss, bbox loss, landmark loss and L2 loss add together
     summary_op = tf.summary.merge_all()
-    logs_dir = "../logs/%s" %(net)
+    logs_dir = "./logs/%s" %(net)
     if os.path.exists(logs_dir) == False:
         os.mkdir(logs_dir)
     writer = tf.summary.FileWriter(logs_dir,sess.graph)
