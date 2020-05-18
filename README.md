@@ -19,11 +19,13 @@ Landmark Face Dataset : http://mmlab.ie.cuhk.edu.hk/archive/CNN_FacePoint.htm
 3. 生成24net landmark数据： python ./prepare_data/gen_landmark_aug_24.py
 4. 生成24net img list: python ./prepare_data/gen_imglist_rnet.py
 5. 生成24net tf record: python  ./prepare_data/gen_RNet_tfrecords.py
-6. 为ONet生成hard example: python ./prepare_data/gen_hard_example_onet.py
+6. 为ONet生成hard example: python ./prepare_data/gen_hard_example_onet.py --test_mode="RNet" --gen_net="ONet"
 7. 生成48net landmark数据：python ./prepare_data/gen_landmark_aug_48.py
 8. 生成48net hard example:python ./prepare_data/gen_imglist_onet.py
 9. 生成48net tfrecord: python ./prepare_data/gen_ONet_tfrecords.py
 10. 开始训练ONet: python ./train_models/train_ONet.py
+
+准备好数据后可以直接执行 train.sh 进行训练。
 
 
 
