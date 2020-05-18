@@ -194,6 +194,8 @@ def parse_args():
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--test_mode', dest='test_mode', help='test net type, can be pnet, rnet or onet',
                         default='PNet', type=str)
+    parser.add_argument('--gen_net', dest='gen_net', help='gen hard example for rnet or onet',
+                        default='RNet', type=str)
     parser.add_argument('--prefix', dest='prefix', help='prefix of model name', nargs="+",
                         default=['./data/MTCNN_model/PNet_landmark/PNet', './data/MTCNN_model/RNet_landmark/RNet', './data/MTCNN_model/ONet_landmark/ONet'],
                         type=str)
@@ -218,9 +220,8 @@ def parse_args():
 if __name__ == '__main__':
 
     args = parse_args()
-    net = args.test_mode
 
-    image_size = 12 
+    net = args.gen_net
     if net == "RNet":
         image_size = 24
     if net == "ONet":
